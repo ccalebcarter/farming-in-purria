@@ -1,0 +1,104 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(10px);
+  z-index: 35;
+}
+
+.modal {
+  width: min(720px, 100%);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(900px 520px at 50% 30%, rgba(255, 255, 255, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(11, 11, 14, 0.72), rgba(0, 0, 0, 0.62));
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  padding: 18px;
+}
+
+.title {
+  font-weight: 920;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 6px;
+  opacity: 0.78;
+  font-size: 13px;
+}
+
+.grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.card {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.24);
+  padding: 12px;
+}
+
+.cardLabel {
+  font-size: 11px;
+  opacity: 0.72;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cardValue {
+  margin-top: 6px;
+  font-weight: 920;
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.meta {
+  margin-top: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.18);
+  padding: 10px 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  opacity: 0.88;
+}
+
+.primaryBtn {
+  margin-top: 14px;
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-weight: 860;
+  letter-spacing: 0.04em;
+  color: rgba(20, 12, 6, 0.92);
+  background: linear-gradient(180deg, rgba(160, 255, 190, 0.96), rgba(255, 220, 120, 0.92));
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+

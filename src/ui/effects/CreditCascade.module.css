@@ -1,0 +1,57 @@
+.wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  overflow: hidden;
+}
+
+.coin {
+  position: absolute;
+  top: -20px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5), transparent 55%),
+    linear-gradient(180deg, rgba(255, 220, 120, 0.95), rgba(255, 140, 90, 0.88));
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(255, 220, 120, 0.18);
+  transform: translateX(calc(var(--drift, 0px))) rotate(0deg);
+  animation: fall 1.35s ease-in forwards, spin 1.35s linear forwards;
+}
+
+.mini {
+  filter: hue-rotate(-20deg) saturate(1.05);
+}
+
+.major {
+  filter: hue-rotate(30deg) saturate(1.08);
+}
+
+.grand {
+  filter: hue-rotate(75deg) saturate(1.15);
+}
+
+@keyframes fall {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--drift, 0px))) translateY(0) scale(0.92);
+  }
+  15% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--drift, 0px))) translateY(118vh) scale(1.02);
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
